@@ -12,7 +12,7 @@ pipeline {
             steps {
                 echo 'Installing Python dependencies...'
                 // Use the 'bat' command for Windows
-                bat 'pip install -r requirements.txt'
+                bat 'C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\Scripts install -r requirements.txt'
             }
         }
 
