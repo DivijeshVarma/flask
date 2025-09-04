@@ -20,7 +20,7 @@ pipeline {
             steps {
                 echo 'Starting the Python web application with Gunicorn...'
                 // Use 'start /b' for Windows to run Gunicorn in the background
-                bat 'start /b gunicorn --bind 0.0.0.0:5000 app:app'
+                bat 'start /b C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\gunicorn.exe --bind 0.0.0.0:5000 app:app'
                 
                 // Wait for a few seconds to ensure the application starts
                 sleep 5
@@ -32,11 +32,4 @@ pipeline {
         }
     }
     
-    post {
-        always {
-            echo 'Performing cleanup...'
-            // Use 'taskkill' to terminate the Gunicorn process on Windows
-            bat 'taskkill /F /IM gunicorn.exe || exit 0'
-        }
-    }
 }
